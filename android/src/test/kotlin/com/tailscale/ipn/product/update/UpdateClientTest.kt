@@ -27,7 +27,7 @@ class UpdateClientTest {
           packageName = "com.stardom.vpn",
           versionCode = 110102920L,
           versionName = "1.101.292",
-          downloadUrl = "https://dashboard.elitoswork.ru/download/android",
+          downloadUrl = "https://dashboard.stardomcore.com/download/android",
           publishedAt = "2026-09-20T12:00:00Z",
           forceUpdate = false,
           minSupportedVersionCode = 110102000L,
@@ -44,7 +44,7 @@ class UpdateClientTest {
 
   @Test
   fun getFinalApkFileProducesManifestSpecificName() {
-    val client = UpdateClient("https://dashboard.elitoswork.ru")
+    val client = UpdateClient("https://dashboard.stardomcore.com")
     val finalFile = client.getFinalApkFile(context, testManifest)
 
     val expectedFileName = "stardom-update-110102920-4a7b3c2d.apk"
@@ -54,7 +54,7 @@ class UpdateClientTest {
 
   @Test
   fun getPartApkFileProducesManifestSpecificName() {
-    val client = UpdateClient("https://dashboard.elitoswork.ru")
+    val client = UpdateClient("https://dashboard.stardomcore.com")
     val partFile = client.getPartApkFile(context, testManifest)
 
     val expectedFileName = "stardom-update-110102920-4a7b3c2d.apk.part"
@@ -64,7 +64,7 @@ class UpdateClientTest {
 
   @Test
   fun staticCompanionMethodsMatchInstanceMethods() {
-    val client = UpdateClient("https://dashboard.elitoswork.ru")
+    val client = UpdateClient("https://dashboard.stardomcore.com")
     assertEquals(
         UpdateClient.getFinalApkFile(context, testManifest),
         client.getFinalApkFile(context, testManifest))

@@ -14,27 +14,27 @@ class ProductConfigTest {
 
   @Test
   fun defaultDebugProductConfigEqualsIntendedPublicEndpoints() {
-    assertEquals("https://headscale.elitoswork.ru", ProductConfig.headscaleControlUrl)
-    assertEquals("https://api.elitoswork.ru", ProductConfig.policyApiBaseUrl)
+    assertEquals("https://headscale.stardomcore.com", ProductConfig.headscaleControlUrl)
+    assertEquals("https://api.stardomcore.com", ProductConfig.policyApiBaseUrl)
     assertEquals(
-        "https://auth.elitoswork.ru/application/o/policy-api-android-mvp/",
+        "https://auth.stardomcore.com/application/o/policy-api-android-mvp/",
         ProductConfig.authentikIssuerUrl)
     assertEquals("policy-api-android-mvp", ProductConfig.policyApiOidcClientId)
-    assertEquals("https://dashboard.elitoswork.ru", ProductConfig.dashboardBaseUrl)
+    assertEquals("https://dashboard.stardomcore.com", ProductConfig.dashboardBaseUrl)
 
     assertTrue(
         "Headscale URL must be HTTPS",
-        ProductConfig.headscaleControlUrl.startsWith("https://headscale.elitoswork.ru"))
+        ProductConfig.headscaleControlUrl.startsWith("https://headscale.stardomcore.com"))
     assertTrue(
         "Policy API URL must be HTTPS",
-        ProductConfig.policyApiBaseUrl.startsWith("https://api.elitoswork.ru"))
+        ProductConfig.policyApiBaseUrl.startsWith("https://api.stardomcore.com"))
     assertTrue(
         "Authentik Issuer URL must be HTTPS",
         ProductConfig.authentikIssuerUrl.startsWith(
-            "https://auth.elitoswork.ru/application/o/policy-api-android-mvp/"))
+            "https://auth.stardomcore.com/application/o/policy-api-android-mvp/"))
     assertTrue(
         "Dashboard URL must be HTTPS",
-        ProductConfig.dashboardBaseUrl.startsWith("https://dashboard.elitoswork.ru"))
+        ProductConfig.dashboardBaseUrl.startsWith("https://dashboard.stardomcore.com"))
   }
 
   @Test

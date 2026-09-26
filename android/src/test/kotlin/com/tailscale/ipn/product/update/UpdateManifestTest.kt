@@ -10,7 +10,7 @@ import org.junit.Test
 
 class UpdateManifestTest {
 
-  private val validDashboardUrl = "https://dashboard.elitoswork.ru"
+  private val validDashboardUrl = "https://dashboard.stardomcore.com"
   private val validSha256 = "4a7b3c2d1e0f9a8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c8d7e6f5a4b"
 
   private fun createJson(
@@ -18,7 +18,7 @@ class UpdateManifestTest {
       packageName: String = "com.stardom.vpn",
       versionCode: Long = 110102920,
       versionName: String = "1.101.292",
-      downloadUrl: String = "https://dashboard.elitoswork.ru/download/android",
+      downloadUrl: String = "https://dashboard.stardomcore.com/download/android",
       publishedAt: String = "2026-09-20T12:00:00Z",
       forceUpdate: Boolean = false,
       minSupportedVersionCode: Long = 110102000,
@@ -55,7 +55,7 @@ class UpdateManifestTest {
     assertEquals("com.stardom.vpn", manifest.packageName)
     assertEquals(110102920L, manifest.versionCode)
     assertEquals("1.101.292", manifest.versionName)
-    assertEquals("https://dashboard.elitoswork.ru/download/android", manifest.downloadUrl)
+    assertEquals("https://dashboard.stardomcore.com/download/android", manifest.downloadUrl)
     assertEquals("2026-09-20T12:00:00Z", manifest.publishedAt)
     assertFalse(manifest.forceUpdate)
     assertEquals(110102000L, manifest.minSupportedVersionCode)
@@ -74,7 +74,7 @@ class UpdateManifestTest {
 
     val manifest = result.getOrThrow()
     assertEquals("/download/android", manifest.downloadUrl)
-    assertEquals("https://dashboard.elitoswork.ru/download/android", manifest.resolveDownloadUrl(validDashboardUrl))
+    assertEquals("https://dashboard.stardomcore.com/download/android", manifest.resolveDownloadUrl(validDashboardUrl))
   }
 
   @Test
@@ -155,7 +155,7 @@ class UpdateManifestTest {
   @Test
   fun foreignOrInsecureDownloadUrlRejected() {
     // Plain HTTP
-    val httpUrl = UpdateManifest.parseAndValidate(createJson(downloadUrl = "http://dashboard.elitoswork.ru/download/android"), validDashboardUrl)
+    val httpUrl = UpdateManifest.parseAndValidate(createJson(downloadUrl = "http://dashboard.stardomcore.com/download/android"), validDashboardUrl)
     assertTrue("plain HTTP download_url must be rejected", httpUrl.isFailure)
 
     // Foreign host
@@ -163,7 +163,7 @@ class UpdateManifestTest {
     assertTrue("foreign host download_url must be rejected", foreignHost.isFailure)
 
     // Foreign path
-    val foreignPath = UpdateManifest.parseAndValidate(createJson(downloadUrl = "https://dashboard.elitoswork.ru/malicious.apk"), validDashboardUrl)
+    val foreignPath = UpdateManifest.parseAndValidate(createJson(downloadUrl = "https://dashboard.stardomcore.com/malicious.apk"), validDashboardUrl)
     assertTrue("foreign path download_url must be rejected", foreignPath.isFailure)
   }
 

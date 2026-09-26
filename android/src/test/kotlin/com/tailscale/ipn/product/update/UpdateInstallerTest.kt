@@ -34,7 +34,7 @@ class UpdateInstallerTest {
           packageName = "com.stardom.vpn",
           versionCode = 110102920L,
           versionName = "1.101.292",
-          downloadUrl = "https://dashboard.elitoswork.ru/download/android",
+          downloadUrl = "https://dashboard.stardomcore.com/download/android",
           publishedAt = "2026-09-20T12:00:00Z",
           forceUpdate = false,
           minSupportedVersionCode = 110102000L,

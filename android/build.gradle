@@ -56,11 +56,11 @@ android {
         // Set it to false either here or in your local.properties file to
         // disable this behaviour.
         buildConfigField "boolean", "USE_GOOGLE_DNS_FALLBACK", getLocalProperty("tailscale.useGoogleDnsFallback", "true")
-        buildConfigField "String", "HEADSCALE_CONTROL_URL", stardomBuildConfigValue("stardom.headscaleControlUrl", "https://headscale.elitoswork.ru")
-        buildConfigField "String", "POLICY_API_BASE_URL", stardomBuildConfigValue("stardom.policyApiBaseUrl", "https://api.elitoswork.ru")
-        buildConfigField "String", "AUTHENTIK_ISSUER_URL", stardomBuildConfigValue("stardom.authentikIssuerUrl", "https://auth.elitoswork.ru/application/o/policy-api-android-mvp/")
+        buildConfigField "String", "HEADSCALE_CONTROL_URL", stardomBuildConfigValue("stardom.headscaleControlUrl", "https://headscale.stardomcore.com")
+        buildConfigField "String", "POLICY_API_BASE_URL", stardomBuildConfigValue("stardom.policyApiBaseUrl", "https://api.stardomcore.com")
+        buildConfigField "String", "AUTHENTIK_ISSUER_URL", stardomBuildConfigValue("stardom.authentikIssuerUrl", "https://auth.stardomcore.com/application/o/policy-api-android-mvp/")
         buildConfigField "String", "POLICY_API_OIDC_CLIENT_ID", stardomBuildConfigValue("stardom.policyApiOidcClientId", "policy-api-android-mvp")
-        buildConfigField "String", "DASHBOARD_BASE_URL", stardomBuildConfigValue("stardom.dashboardBaseUrl", "https://dashboard.elitoswork.ru")
+        buildConfigField "String", "DASHBOARD_BASE_URL", stardomBuildConfigValue("stardom.dashboardBaseUrl", "https://dashboard.stardomcore.com")
     }
 
     compileOptions {
@@ -100,11 +100,11 @@ android {
         release {
             manifestPlaceholders.leanbackRequired = isTV()
 
-            buildConfigField "String", "HEADSCALE_CONTROL_URL", stardomBuildConfigValue("stardom.headscaleControlUrl", "https://headscale.elitoswork.ru")
-            buildConfigField "String", "POLICY_API_BASE_URL", stardomBuildConfigValue("stardom.policyApiBaseUrl", "https://api.elitoswork.ru")
-            buildConfigField "String", "AUTHENTIK_ISSUER_URL", stardomBuildConfigValue("stardom.authentikIssuerUrl", "https://auth.elitoswork.ru/application/o/policy-api-android-mvp/")
+            buildConfigField "String", "HEADSCALE_CONTROL_URL", stardomBuildConfigValue("stardom.headscaleControlUrl", "https://headscale.stardomcore.com")
+            buildConfigField "String", "POLICY_API_BASE_URL", stardomBuildConfigValue("stardom.policyApiBaseUrl", "https://api.stardomcore.com")
+            buildConfigField "String", "AUTHENTIK_ISSUER_URL", stardomBuildConfigValue("stardom.authentikIssuerUrl", "https://auth.stardomcore.com/application/o/policy-api-android-mvp/")
             buildConfigField "String", "POLICY_API_OIDC_CLIENT_ID", stardomBuildConfigValue("stardom.policyApiOidcClientId", "policy-api-android-mvp")
-            buildConfigField "String", "DASHBOARD_BASE_URL", stardomBuildConfigValue("stardom.dashboardBaseUrl", "https://dashboard.elitoswork.ru")
+            buildConfigField "String", "DASHBOARD_BASE_URL", stardomBuildConfigValue("stardom.dashboardBaseUrl", "https://dashboard.stardomcore.com")
 
             minifyEnabled true
 

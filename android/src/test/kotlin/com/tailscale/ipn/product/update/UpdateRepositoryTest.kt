@@ -49,7 +49,7 @@ class UpdateRepositoryTest {
           packageName = "com.stardom.vpn",
           versionCode = 110102920L,
           versionName = "1.101.292",
-          downloadUrl = "https://dashboard.elitoswork.ru/download/android",
+          downloadUrl = "https://dashboard.stardomcore.com/download/android",
           publishedAt = "2026-09-20T12:00:00Z",
           forceUpdate = false,
           minSupportedVersionCode = 110102000L,
@@ -76,7 +76,7 @@ class UpdateRepositoryTest {
     return UpdateRepository(
         context = context,
         scope = testScope,
-        dashboardBaseUrl = "https://dashboard.elitoswork.ru",
+        dashboardBaseUrl = "https://dashboard.stardomcore.com",
         client = client,
         installer = installer,
         ioDispatcher = testDispatcher,

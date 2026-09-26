@@ -20,11 +20,11 @@ When assembling a release APK (`assembleRelease`, `bundleRelease`, `packageRelea
 cd android
 
 ./gradlew assembleRelease \
-  -Pstardom.headscaleControlUrl=https://headscale.elitoswork.ru \
-  -Pstardom.policyApiBaseUrl=https://api.elitoswork.ru \
-  -Pstardom.authentikIssuerUrl=https://auth.elitoswork.ru/application/o/policy-api-android-mvp/ \
+  -Pstardom.headscaleControlUrl=https://headscale.stardomcore.com \
+  -Pstardom.policyApiBaseUrl=https://api.stardomcore.com \
+  -Pstardom.authentikIssuerUrl=https://auth.stardomcore.com/application/o/policy-api-android-mvp/ \
   -Pstardom.policyApiOidcClientId=policy-api-android-mvp \
-  -Pstardom.dashboardBaseUrl=https://dashboard.elitoswork.ru \
+  -Pstardom.dashboardBaseUrl=https://dashboard.stardomcore.com \
   -Pstardom.versionCode=110102911 \
   -Pstardom.versionName=1.101.291-stardom.1 \
   --console=plain
