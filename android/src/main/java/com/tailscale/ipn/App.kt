@@ -737,7 +737,12 @@ class App : UninitializedApp(), libtailscale.AppContext, ViewModelStoreOwner {
     )
 
     return try {
-      android.os.ParcelFileDescriptor.fromFd(fd).use { pfd -> net.bindSocket(pfd.fileDescriptor) }
+      val pfd = android.os.ParcelFileDescriptor.fromFd(fd)
+      try {
+        net.bindSocket(pfd.fileDescriptor)
+      } finally {
+        pfd.detachFd()
+      }
       true
     } catch (e: Exception) {
       TSLog.w(

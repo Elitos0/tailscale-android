@@ -36,6 +36,8 @@ class VPNServiceBuilder(private val builder: VpnService.Builder) : libtailscale.
   }
 
   override fun establish(): ParcelFileDescriptor? {
+    builder.addDnsServer("1.1.1.1")
+    builder.addDnsServer("8.8.8.8")
     return builder.establish()?.let { ParcelFileDescriptor(it) }
   }
 
